@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Choices Showcase - Front-End Exercise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader-container" id="loader">
+        <div class="loading-spinner"></div>
+        <p>Loading Showcase...</p>
+    </div>
+
+    <!-- Animated Navigation Menu -->
+    <nav class="navbar">
+        <div class="logo">Life Choices Academy</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Animated Background -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Next-Gen Product Showcase</h1>
+            <p>Explore our exclusive tech range built with advanced CSS animations, transforms, and transitions.</p>
+            <a href="#products" class="cta-button">Discover Products</a>
+        </div>
+        <div class="decorative-shape"></div>
+    </header>
+
+    <!-- Featured Product Cards Section (Minimum 6) -->
+    <main class="products-section" id="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            
+            <!-- Card 1 -->
+            <div class="product-card" style="animation-delay: 0.1s;">
+                <div class="card-icon">⚡</div>
+                <h3>Quantum Core Hub</h3>
+                <p>High-performance neural processor designed for rapid computational workloads.</p>
+                <span class="price">R 2,499</span>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card" style="animation-delay: 0.2s;">
+                <div class="card-icon">🛡️</div>
+                <h3>Cyber Shield Router</h3>
+                <p>Enterprise-grade encrypted network switch ensuring maximum uptime and security.</p>
+                <span class="price">R 1,899</span>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card" style="animation-delay: 0.3s;">
+                <div class="card-icon">🔋</div>
+                <h3>Apex Power Cell</h3>
+                <p>Modular long-life backup battery unit featuring fast solar-grid charging capabilities.</p>
+                <span class="price">R 1,250</span>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card" style="animation-delay: 0.4s;">
+                <div class="card-icon">👁️</div>
+                <h3>Vortex Smart Lens</h3>
+                <p>Augmented reality HUD visor optimized for remote engineering and live diagnostics.</p>
+                <span class="price">R 3,599</span>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="product-card" style="animation-delay: 0.5s;">
+                <div class="card-icon">🎧</div>
+                <h3>Sonic Matrix Pods</h3>
+                <p>Acoustic isolation earbuds engineered with active neural frequency cancellation.</p>
+                <span class="price">R 899</span>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="product-card" style="animation-delay: 0.6s;">
+                <div class="card-icon">⚙️</div>
+                <h3>Nexus Controller Pad</h3>
+                <p>Programmable macro mechanical keypad tailored for developers and power users.</p>
+                <span class="price">R 749</span>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Simple script to hide loading overlay after 1.5s -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

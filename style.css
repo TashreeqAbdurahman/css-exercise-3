@@ -1,0 +1,274 @@
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- Loading Animation --- */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #00c6ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loader-container p {
+    color: #fff;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Animated Navigation Menu --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(26, 37, 48, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    /* Transition requirement */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00c6ff;
+    /* Transform requirement */
+    transform: translateY(-2px);
+}
+
+/* --- Hero Section with Animated Background --- */
+.hero {
+    height: 90vh;
+    background: linear-gradient(-45deg, #0072ff, #00c6ff, #2c3e50, #1a2530);
+    background-size: 400% 400%;
+    /* Animation requirement */
+    animation: gradientBG 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: slideInDown 1s ease forwards;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Skew Transform for Decorative Elements --- */
+.decorative-shape {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #f4f7f6;
+    /* Transform requirement */
+    transform: skewY(-3deg);
+}
+
+/* --- CTA Button Pulse Animation --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #0072ff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    /* Animation & Transition requirements */
+    animation: pulse 2s infinite;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #00c6ff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* --- Products Section & Grid --- */
+.products-section {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* --- Product Cards & Animations --- */
+.product-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    /* Animation slide-in effect */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUpFade 0.8s ease forwards;
+    /* Transition requirements */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* Animation-play-state requirement */
+    animation-play-state: running;
+}
+
+/* Pause animation on hover */
+.product-card:hover {
+    animation-play-state: paused;
+    /* Transform requirement: Scale & Translate */
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Rotate Transform for Icons --- */
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    /* Transform-origin requirement */
+    transform-origin: center;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.product-card:hover h3 {
+    color: #0072ff;
+}
+
+.product-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.price {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* --- Card Button --- */
+.card-btn {
+    padding: 8px 20px;
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+}
+
+.card-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
